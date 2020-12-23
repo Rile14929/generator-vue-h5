@@ -14,40 +14,54 @@ module.exports = class extends Generator {
         default: this.appname // Default to current folder name
       },
     ]);
-    const pkgJson = {
-      "name": answers.name,
-      "version": "1.0.0",
-      "description": "",
-      "main": "src/main.js",
-      "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-      },
-      "author": "",
-      "license": "ISC",
-      "dependencies": {
-      },
-      "devDependencies": {
-        "webpack": "4.44.0"
-      },
-    }
-    this.fs.extendJSON(this.destinationPath('package.json'), pkgJson);
-    
+  }
+
+  writing() {
     this.fs.copyTpl(
-      this.templatePath('HelloWorld.vue'),
-      this.destinationPath('src/HelloWorld.vue'),
+      this.sourceRoot(),
+      this.destinationPath(),
     )
+
     this.fs.copyTpl(
-      this.templatePath('webpack.config.js'),
-      this.destinationPath('webpack.config.js'),
+      this.templatePath('.browserslistrc'),
+      this.destinationPath('.browserslistrc'),
     )
+
     this.fs.copyTpl(
-      this.templatePath('main.js'),
-      this.destinationPath('src/main.js'),
+      this.templatePath('.env'),
+      this.destinationPath('.env'),
     )
+
     this.fs.copyTpl(
-      this.templatePath('index.html'),
-      this.destinationPath('src/index.html'),
-      { title: answers.name }
+      this.templatePath('.env.development'),
+      this.destinationPath('.env.development'),
     )
+
+    this.fs.copyTpl(
+      this.templatePath('.env.staging'),
+      this.destinationPath('.env.staging'),
+    )
+
+    this.fs.copyTpl(
+      this.templatePath('.env.production'),
+      this.destinationPath('.env.production'),
+    )
+
+    this.fs.copyTpl(
+      this.templatePath('.eslintrc.js'),
+      this.destinationPath('.eslintrc.js'),
+    )
+
+    this.fs.copyTpl(
+      this.templatePath('.gitignore'),
+      this.destinationPath('.gitignore'),
+    )
+
+    this.fs.copyTpl(
+      this.templatePath('.prettierignore'),
+      this.destinationPath('.prettierignore'),
+    )
+
+    this.npmInstall()
   }
 };
