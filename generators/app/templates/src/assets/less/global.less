@@ -1,0 +1,75 @@
+.browser-bottom {
+  padding-bottom: 8rem;
+}
+
+.my-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.one-line {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.two-line {
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+}
+
+.confirm-button {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.form-label {
+  font-size: 13px;
+  color: @my-gray-3;
+}
+.form-wrapper {
+  font-size: 13px;
+}
+
+.infinite-rotation {
+  -webkit-animation: infiniteRotation 4s infinite linear ;
+  -webkit-transform-origin: center center;
+  -ms-transform-origin: center center;
+  transform-origin: center center;
+}
+
+@-webkit-keyframes infiniteRotation {
+  0%{
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.van-tabs__line {
+  width: 20px !important;
+}
+.van-tab--active {
+  font-size: 16px !important;
+}
+
+.van-dropdown-menu__bar {
+  box-shadow: none !important;
+}
+
+.van-dropdown-item__content {
+  position: absolute !important;
+  max-height: 80% !important;
+}
