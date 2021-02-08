@@ -1,7 +1,6 @@
 # generator-vue-h5
 
-- npm install
-- npm link
+- npm install generator-vue-html5
+- npm install -g yo
+- yo vue-html5
 
-- 使用脚手架
-  - yo vue-h5
